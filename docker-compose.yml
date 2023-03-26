@@ -1,0 +1,26 @@
+version: '3.9'
+services:
+  tensorflow:
+    container_name: Tensorflow-docker-template
+    image: tensorflow/tensorflow:latest-gpu-jupyter
+    restart: unless-stopped
+    volumes:
+      - .:/tf/host_folder
+    working_dir: /tf/host_folder
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            count: all
+            capabilities: [gpu]
+    ports:
+      - '8888:8888'
+    networks:
+      - jupyter
+networks:
+  jupyter:
+    driver: bridge
+volumes:
+  host_folder:
+    external: true
