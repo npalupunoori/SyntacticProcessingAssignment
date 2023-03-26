@@ -1,8 +1,22 @@
-# Template Repository name
+# SyntacticProcessingAssignment
+## Problem Statement
+Identifying entities in health care data
+----------------------------------------
+Clicinoca records contain valuable information like:
+ * Patients health
+ * Vitals like blood pressire, temperatutre, weight, sigar level and test results
+ * Symptoms and side effects
+ * Diseases and treatments
 
-Description
+Complexity of medical data: 
+* Language is very complex and is not what is used in general speech
+* Has lot of medical terms.
 
-## Tensorflow-docker-template
+
+Cannot use off the shelf NER becasue of above complexity.
+
+
+## Tensorflow-docker
 This is a template for starting a tensorflow docker, with local host directory linked as volume.
 This mounting of volume helps us to share Jupyter notebooks via GIT with out sharing the full docker.
 
